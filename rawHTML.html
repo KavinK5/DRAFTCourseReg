@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        div .headR img
+        {
+            height: 80px;
+            width: 250px;
+        }
+
+        div .headR nav
+        {
+            display: flex;
+            gap:2.5em;
+            position: absolute;
+            right:15px;
+            top:30px;
+        }
+
+        div .headR nav a
+        {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            font-size: 1.3em;
+            color:rgb(220, 100, 0);
+        }
+
+        div .headR nav a:hover
+        {
+            transition: all 1s;
+            color:black;
+        }
+
+        .WholeContent
+        {
+            margin-top: 40px;
+            border: 3px solid hsla(0, 25%, 88%, 0.415);
+            border-radius: 25px;
+            width: 1200px;
+        }
+
+        .content
+        {
+            background-color: rgba(232, 217, 217, 0.215);
+            border-radius: 25px;
+            display: flex;
+            height: 570px;
+            gap:5em;
+        }
+
+        .content img
+        {
+            height:490px;
+            width:480px;
+            margin: 30px 20px 0 50px;
+        }
+
+        .formFor
+        {
+            margin: 30px 30px 30px 0;
+            overflow: auto;
+            overflow-y: scroll;
+            padding-right: 20px;
+            /* border: 2px solid black; */
+            padding: 15px;
+            width: 400px;
+        }
+
+        form
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        label
+        {
+            font-weight: bold;
+        }
+
+        #Fname,#Fdadname,#spanID
+        {
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            width: 95%;
+            height: 20px;
+            font-size: 1.2em;
+            padding: 5px;
+            font-family: monospace;
+            /* font-weight: bold; */
+        }
+
+        #spanID
+        {
+            font-size: 1.1em;
+        }
+
+        #Male,#Female,#others
+        {
+            margin-top: 12px;
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        #Fdegree,#Fdept
+        {
+            font-size: 1em;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            padding: 5px;
+            width: 45%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="headR">
+            <img src="./elysium.png">
+            <nav>
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Courses</a>
+                <a href="">Contact</a>
+                <a href="">Logout</a>
+            </nav>
+        </div>
+        <div style="display: flex;justify-content: center;">
+            <div class="WholeContent">
+                <div class="content">
+                        <img src="./quotes1.jpg">
+                        <div class="formFor">
+                            <div style="text-align: center;margin-bottom: 20px ;font-size: 1.25em;font-weight: bold;">
+                                Registration Form
+                            </div>
+                            <form>
+                                <label for="Fname">Name</label><br>
+                                <input required type="text" id="Fname" name="Cname">
+                            
+
+                                <label for="Fdadname">Father's Name</label><br>
+                                <input required type="text" id="Fdadname" name="Cdadname">
+
+                                <label for="Fgender">Gender</label><br>
+                                <span id="spanID">
+                                    <input required type="radio" name="gen" id="Male" value="Male">
+                                    <label for="Male">Male</label>
+                                    <input required type="radio" name="gen" id="Female" value="Female">
+                                    <label for="Female">Female</label>
+                                    <input required type="radio" name="gen" id="others" value="others">
+                                    <label for="others">Others</label>
+                                </span>
+
+                                <label for="Fdegree">Degree</label><br>
+                                <select name="Fdegree" id="Fdegree">
+                                    <option value="M.Phil">M.Phil</option>
+                                    <option value="M.E">M.E</option>
+                                    <option value="M.Tech">M.Tech</option>
+                                    <option value="M.Sc">M.Sc</option>
+                                    <option value="B.E">B.E</option>
+                                    <option value="B.Tech">B.Tech</option>
+                                    <option value="B.Sc">B.Sc</option>
+                                    <option value="Diploma">Diploma</option>
+                                    <option value="Others">Others</option>
+                                 </select><br>
+
+                                <label for="Fdept">Department</label><br>
+                                <select name="Cdept" id="Fdept">
+                                    <option value="M.Phil">M.Phil</option>
+                                    <option value="M.E">M.E</option>
+                                    <option value="M.Tech">M.Tech</option>
+                                    <option value="M.Sc">M.Sc</option>
+                                    <option value="B.E">B.E</option>
+                                    <option value="B.Tech">B.Tech</option>
+                                    <option value="B.Sc">B.Sc</option>
+                                    <option value="Diploma">Diploma</option>
+                                    <option value="Others">Others</option>
+                                 </select>
+                            </form>
+                        </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</body>
+</html>
