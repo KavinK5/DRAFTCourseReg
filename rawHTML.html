@@ -85,7 +85,7 @@
             font-weight: bold;
         }
 
-        #Fname,#Fdadname,#spanID
+        #Fname,#Fdadname,#spanID,#Fdegree,#Fdept
         {
             border-radius: 5px;
             margin-top: 10px;
@@ -96,6 +96,11 @@
             padding: 5px;
             font-family: monospace;
             /* font-weight: bold; */
+        }
+
+        #Fdegree
+        {
+            width: 70%;
         }
 
         #spanID
@@ -110,15 +115,13 @@
             margin-bottom: 15px;
         }
 
-        #Fdegree,#Fdept
+        .qualif
         {
-            font-size: 1em;
             margin-top: 10px;
-            margin-bottom: 15px;
-            padding: 5px;
-            width: 45%;
-            border-radius: 5px;
+            display: flex;
+            gap:0px;
         }
+        
     </style>
 </head>
 <body>
@@ -159,31 +162,16 @@
                                     <label for="others">Others</label>
                                 </span>
 
-                                <label for="Fdegree">Degree</label><br>
-                                <select name="Fdegree" id="Fdegree">
-                                    <option value="M.Phil">M.Phil</option>
-                                    <option value="M.E">M.E</option>
-                                    <option value="M.Tech">M.Tech</option>
-                                    <option value="M.Sc">M.Sc</option>
-                                    <option value="B.E">B.E</option>
-                                    <option value="B.Tech">B.Tech</option>
-                                    <option value="B.Sc">B.Sc</option>
-                                    <option value="Diploma">Diploma</option>
-                                    <option value="Others">Others</option>
-                                 </select><br>
-
-                                <label for="Fdept">Department</label><br>
-                                <select name="Cdept" id="Fdept">
-                                    <option value="M.Phil">M.Phil</option>
-                                    <option value="M.E">M.E</option>
-                                    <option value="M.Tech">M.Tech</option>
-                                    <option value="M.Sc">M.Sc</option>
-                                    <option value="B.E">B.E</option>
-                                    <option value="B.Tech">B.Tech</option>
-                                    <option value="B.Sc">B.Sc</option>
-                                    <option value="Diploma">Diploma</option>
-                                    <option value="Others">Others</option>
-                                 </select>
+                                <div class="qualif">
+                                    <div>
+                                        <label for="Fdegree">Degree</label><br>
+                                        <input type="text" name="Cdegree" id="Fdegree">
+                                    </div>
+                                    <div>
+                                        <label for="Fdept">Department</label><br>
+                                        <input type="text" name="Cdept" id="Fdept">
+                                    </div>
+                                </div>
                             </form>
                         </div>
                 </div>
