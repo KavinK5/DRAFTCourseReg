@@ -85,7 +85,7 @@
             font-weight: bold;
         }
 
-        #Fname,#Fdadname,#spanID,#Fschname,#Fyr,#Fclgname,#Fdip
+        #Fname,#Fdadname,#spanID,#Fschname,#Fyr,#Fclgname,#Fdip,#Fcntct,#Fem
         {
             border-radius: 5px;
             margin: 10px 0 15px 0;
@@ -149,6 +149,21 @@
         #clgyr,#dipQualif,#moreclg,#degDetails,#schlDiv
         {
             display: none;
+        }
+
+        #Fcntct:valid,#Fname:valid,#Fem:valid,#Fyr:valid,#Fdip:valid,#Fclgname:valid,#Fdadname:valid,#Fschname:valid
+        {
+            box-shadow: -5px 5px 10px rgba(0,0,0,0.3);
+        }
+
+        #Fcntct:invalid
+        {
+            border-color: red;
+        }
+
+        #Fcntct:focus:invalid
+        {
+            border-color: red;
         }
     </style>
 </head>
@@ -234,10 +249,20 @@
 
                             <div id="clgyr">
                                 <label for="Fyr">Year of Passed Out</label><br>
-                                <input required type="text" id="Fyr" name="Cyr"><br>
+                                <input required type="text" id="Fyr" name="Cyr" pattern="20[012]{1}[0-9]{1}"><br>
                             </div>
 
-                        
+                            <div id="divEmail">
+                                <label for="Fem">Email Address</label><br>
+                                <input required type="email" id="Fem" name="Cem" placeholder="domain112@-----" pattern="([0-9a-zA-Z\.?]+)@([a-z\.]+)"><br>
+                            </div>
+
+                            <div id="divContact">
+                                <label for="Fcntct">Mobile Number</label><br>
+                                <input required type="text" inputmode="numeric" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="Fcntct" name="Ccntct"><br>
+                            </div>
+
+                            <input type="submit" value="Submit">
                             </form>
                         </div>
                 </div>
