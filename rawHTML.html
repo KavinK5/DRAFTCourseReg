@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        div .headR img
+        {
+            height: 80px;
+            width: 250px;
+        }
+
+        div .headR nav
+        {
+            display: flex;
+            gap:2.5em;
+            position: absolute;
+            right:15px;
+            top:30px;
+        }
+
+        div .headR nav a
+        {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            font-size: 1.3em;
+            color:rgb(220, 100, 0);
+        }
+
+        div .headR nav a:hover
+        {
+            transition: all 1s;
+            color:black;
+        }
+
+        .WholeContent
+        {
+            margin-top: 40px;
+            border: 3px solid hsla(0, 25%, 88%, 0.415);
+            border-radius: 25px;
+            width: 1200px;
+        }
+
+        .content
+        {
+            background-color: rgba(232, 217, 217, 0.215);
+            border-radius: 25px;
+            display: flex;
+            height: 570px;
+            gap:5em;
+        }
+
+        .content img
+        {
+            height:490px;
+            width:480px;
+            margin: 30px 20px 0 50px;
+        }
+
+        .formFor
+        {
+            margin: 30px 30px 30px 0;
+            overflow: auto;
+            overflow-y: scroll;
+            padding-right: 20px;
+            /* border: 2px solid black; */
+            padding: 15px;
+            width: 400px;
+        }
+
+        form
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        label
+        {
+            font-weight: bold;
+        }
+
+        #Fname,#Fdadname,#spanID,#Fschname,#Fyr,#Fclgname,#Fdip,#Fcntct,#Fem
+        {
+            border-radius: 5px;
+            margin: 10px 0 15px 0;
+            width: 95%;
+            height: 20px;
+            font-size: 1.2em;
+            padding: 5px;
+            font-family: monospace;
+            /* font-weight: bold; */
+        }
+
+        #spanID
+        {
+            font-size: 1em;
+        }
+
+        #Male,#Female,#others
+        {
+            margin: 12px 0 20px 30px;
+        }
+
+        .qualif
+        {
+            margin-top: 10px;
+            display: flex;
+            gap:0px;
+        }
+
+        #SSLC,#HSC,#Others,#Degree
+        {
+            font-size: 1em;
+            margin: 12px 0 15px 20px;
+        }
+        
+        #degDetails
+        {
+            display: flex;
+            gap:3.2em;
+        }
+
+        #deptID,#degID
+        {
+            margin: 10px 0 20px 20px;
+            text-align: center;
+            width: 120px;
+            padding: 3px;
+            font-size: 1em;
+        }
+
+        #deptID
+        {
+            margin-left: 8px;
+            width: 150px;
+        }
+
+        #degID:hover,#deptID:hover
+        {
+            cursor: pointer;
+        }
+
+        #clgyr,#dipQualif,#moreclg,#degDetails,#schlDiv
+        {
+            display: none;
+        }
+
+        #Fcntct:valid,#Fname:valid,#Fem:valid,#Fyr:valid,#Fdip:valid,#Fclgname:valid,#Fdadname:valid,#Fschname:valid
+        {
+            box-shadow: -5px 5px 10px rgba(0,0,0,0.3);
+        }
+
+        #Fcntct:invalid
+        {
+            border-color: red;
+        }
+
+        #Fcntct:focus:invalid
+        {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="headR">
+            <img src="./elysium.png">
+            <nav>
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Courses</a>
+                <a href="">Contact</a>
+                <a href="">Logout</a>
+            </nav>
+        </div>
+        <div style="display: flex;justify-content: center;">
+            <div class="WholeContent">
+                <div class="content">
+                        <img src="./quotes1.jpg">
+                        <div class="formFor">
+                            <div style="text-align: center;margin-bottom: 20px ;font-size: 1.25em;font-weight: bold;">
+                                Registration Form
+                            </div>
+                            <form>
+                                <label for="Fname">Name</label><br>
+                                <input required type="text" id="Fname" name="Cname">
+                            
+
+                                <label for="Fdadname">Father's Name</label><br>
+                                <input required type="text" id="Fdadname" name="Cdadname">
+
+                                <label for="Fgender">Gender</label><br>
+                                <span id="spanID">
+                                    <input required type="radio" name="gen" id="Male" value="Male">
+                                    <label for="Male">Male</label>
+                                    <input required type="radio" name="gen" id="Female" value="Female">
+                                    <label for="Female">Female</label>
+                                    <input required type="radio" name="gen" id="others" value="others">
+                                    <label for="others">Others</label>
+                                </span>
+
+                                <label for="Fqualif">Qualification</label><br>
+                                <span id="spanID">
+                                    <input required type="radio" name="qua" id="SSLC" value="SSLC" onclick="toggleAct('SSLC')">
+                                    <label for="SSLC">SSLC</label>
+                                    <input required type="radio" name="qua" id="HSC" value="HSC" onclick="toggleAct('HSC')">
+                                    <label for="HSC">HSC</label>
+                                    <input required type="radio" name="qua" id="Degree" value="Degree" onclick="toggleAct('Degree')">
+                                    <label for="Degree">Degree</label>
+                                    <input required type="radio" name="qua" id="Others" value="Others" onclick="toggleAct('Others')">
+                                    <label for="Others">Others</label>
+
+                                </span><br>
+
+                            <div id="schlDiv">
+                                <label for="Fschname">School Name</label><br>
+                                <input required type="text" id="Fschname" name="Cschname"><br>
+                            </div>
+
+                            <div id="degDetails">
+                                <div>
+                                    <label for="degID">Degree</label><br>
+                                    <select id="degID">
+                                        <option value="">Degree?</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="deptID">Department</label><br>
+                                    <select id="deptID">
+
+                                    </select>
+                                </div>                                
+                            </div>
+
+                            <div id="moreclg">
+                                <label for="Fclgname">Institution</label><br>
+                                <input required type="text" id="Fclgname" name="Cclgname"><br>
+                            </div>
+
+                            <div id="dipQualif">
+                                <input required type="text" id="Fdip" name="Cdip" placeholder="Mention the Qualification"><br>
+                            </div>
+
+                            <div id="clgyr">
+                                <label for="Fyr">Year of Passed Out</label><br>
+                                <input required type="text" id="Fyr" name="Cyr" pattern="20[012]{1}[0-9]{1}"><br>
+                            </div>
+
+                            <div id="divEmail">
+                                <label for="Fem">Email Address</label><br>
+                                <input required type="email" id="Fem" name="Cem" placeholder="domain112@-----" pattern="([0-9a-zA-Z\.?]+)@([a-z\.]+)"><br>
+                            </div>
+
+                            <div id="divContact">
+                                <label for="Fcntct">Mobile Number</label><br>
+                                <input required type="text" inputmode="numeric" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="Fcntct" name="Ccntct"><br>
+                            </div>
+
+                            <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <script>
+        let degVar = ['B.E','B.Tech','B.Sc'];
+        
+        let deptBE = ['Aeronautical','Automobile','EEE','ECE','Mech'];
+        let deptBTech = ['BioTech','FT','IT'];
+        let deptBSc = ['Physics','Maths','Biology','Chem'];
+        
+        let Slct1 = document.getElementById('degID');
+        let Slct2 = document.getElementById('deptID');
+
+        degVar.forEach(function addDegree(item){
+            let option = document.createElement('option');
+            option.text = item;
+            option.value = item;
+            Slct1.appendChild(option);
+        });
+
+        Slct1.onchange = function(){
+            Slct2.innerHTML = '<option></option>';
+            if (this.value == 'B.E'){
+                addToSlct2(deptBE);
+            }
+
+            if (this.value == 'B.Tech'){
+                addToSlct2(deptBTech);
+            }
+
+            if (this.value == 'B.Sc'){
+                addToSlct2(deptBSc);
+            }
+        }
+
+        function addToSlct2(arr){
+            arr.forEach(function (item){
+                let option = document.createElement('option');
+                option.text = item;
+                option.value = item;
+                Slct2.appendChild(option);
+            })
+        }
+
+
+        function toggleAct(parameter1){
+            document.getElementById('schlDiv').style.display = 'none';
+            document.getElementById('degDetails').style.display = 'none';
+            document.getElementById('moreclg').style.display = 'none';
+            document.getElementById('dipQualif').style.display = 'none';
+            document.getElementById('clgyr').style.display = 'none';
+            if (parameter1 == 'SSLC' || parameter1 == 'HSC'){
+                document.getElementById('schlDiv').style.display = 'block';
+            }
+
+            if (parameter1 == 'Degree'){
+                document.getElementById('degDetails').style.display = 'flex';
+                document.getElementById('moreclg').style.display = 'block';
+                document.getElementById('clgyr').style.display = 'block';
+            }
+
+            if (parameter1 == 'Others'){
+                document.getElementById('dipQualif').style.display = 'block';
+                document.getElementById('clgyr').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
