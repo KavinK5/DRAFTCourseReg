@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="Stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+	
+    </script>
     <style>
         *
         {
@@ -31,7 +35,7 @@
             color: #000000;
             font-weight: bold;
             font-size: 1.3em;
-            color:rgb(220, 100, 0);
+            color:rgb(0, 100, 0);
         }
 
         div .headR nav a:hover
@@ -43,14 +47,14 @@
         .WholeContent
         {
             margin-top: 40px;
-            border: 3px solid hsla(0, 25%, 88%, 0.415);
+            /* border: 3px solid hsla(0, 25%, 88%, 0.415); */
             border-radius: 25px;
-            width: 1200px;
+            width: 80%;
         }
 
         .content
         {
-            background-color: rgba(232, 217, 217, 0.215);
+            /* background-color: rgba(232, 217, 217, 0.215); */
             border-radius: 25px;
             display: flex;
             height: 570px;
@@ -70,9 +74,8 @@
             overflow: auto;
             overflow-y: scroll;
             padding-right: 20px;
-            /* border: 2px solid black; */
             padding: 15px;
-            width: 400px;
+            width: 440px;
         }
 
         form
@@ -85,26 +88,37 @@
             font-weight: bold;
         }
 
-        #Fname,#Fdadname,#spanID,#Fschname,#Fyr,#Fclgname,#Fdip,#Fcntct,#Fem
+        #Fname,#Fdadname,#spanID,#spanID1,#Fschname,#Fyr,#Fclgname,#Fdip,#Fcntct,#Fem
         {
             border-radius: 5px;
             margin: 10px 0 15px 0;
             width: 95%;
             height: 20px;
-            font-size: 1.2em;
-            padding: 5px;
+            font-size: 1em;
+            padding: 12px;
             font-family: monospace;
-            /* font-weight: bold; */
         }
 
         #spanID
         {
+            margin-top: -0px;
+            display: flex;
             font-size: 1em;
+            flex-direction: column;
+            margin-bottom: 100px;
+        }
+
+        #spanID1
+        {
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 120px;
         }
 
         #Male,#Female,#others
         {
-            margin: 12px 0 20px 30px;
+            margin: 0px 0 20px 30px;
         }
 
         .qualif
@@ -158,13 +172,72 @@
 
         #Fcntct:invalid
         {
-            border-color: red;
+           border-color: red;
         }
 
-        #Fcntct:focus:invalid
+        @media(max-width:1125px)
         {
-            border-color: red;
+            /* .content img */
+            /* {
+                position: absolute;
+                transform: translate(-50%,-50%);
+                top:50%;
+                left: 47%;
+            } */
+
+            .content
+            {
+                height: auto;   
+                display: flex;
+                flex-direction: column;    
+                align-items: center;
+            }
+
+            .formFor
+            {
+                /* position: absolute;
+                transform: translate(-20%,-20%);
+                top:100%;
+                left: 37.5%; */
+                border: 2px solid green;
+                padding: 25px;
+                height: 400px;
+                margin-top: 5px;
+                margin-bottom: 100px;
+                width: 450px;
+                margin-left: 50px;
+            }
+
+    }
+
+    @media(max-width:840px)
+    {
+
+        .content img
+        {
+            width: 450px;
         }
+
+        .formFor
+        {
+            width: 440px;
+        }
+    }
+
+    @media(max-width:500px){
+        .content img{
+            width: 350px;
+            height: 350px;
+            margin-left:72px;
+        }
+
+        .formFor{
+            width: 350px;
+            height: 350px;
+            margin-left:72px;
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -197,25 +270,41 @@
 
                                 <label for="Fgender">Gender</label><br>
                                 <span id="spanID">
-                                    <input required type="radio" name="gen" id="Male" value="Male">
-                                    <label for="Male">Male</label>
-                                    <input required type="radio" name="gen" id="Female" value="Female">
-                                    <label for="Female">Female</label>
-                                    <input required type="radio" name="gen" id="others" value="others">
-                                    <label for="others">Others</label>
+                                    <span>
+                                        <input required type="radio" name="gen" id="Male" value="Male">
+                                        <label for="Male">Male</label>
+                                    </span>
+                                    <span>
+                                        <input required type="radio" name="gen" id="Female" value="Female">
+                                        <label for="Female">Female</label> 
+                                    </span>
+                                    <span>
+                                        <input required type="radio" name="gen" id="others" value="others">
+                                        <label for="others">Others</label> <br>
+                                    </span>
                                 </span>
 
                                 <label for="Fqualif">Qualification</label><br>
-                                <span id="spanID">
-                                    <input required type="radio" name="qua" id="SSLC" value="SSLC" onclick="toggleAct('SSLC')">
-                                    <label for="SSLC">SSLC</label>
-                                    <input required type="radio" name="qua" id="HSC" value="HSC" onclick="toggleAct('HSC')">
-                                    <label for="HSC">HSC</label>
-                                    <input required type="radio" name="qua" id="Degree" value="Degree" onclick="toggleAct('Degree')">
-                                    <label for="Degree">Degree</label>
-                                    <input required type="radio" name="qua" id="Others" value="Others" onclick="toggleAct('Others')">
-                                    <label for="Others">Others</label>
-
+                                <span id="spanID1">
+                                    <span>
+                                        <input required type="radio" name="qua" id="SSLC" value="SSLC" onclick="toggleAct('SSLC')">
+                                        <label for="SSLC">SSLC</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input required type="radio" name="qua" id="HSC" value="HSC" onclick="toggleAct('HSC')">
+                                        <label for="HSC">HSC</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input required type="radio" name="qua" id="Degree" value="Degree" onclick="toggleAct('Degree')">
+                                        <label for="Degree">Degree</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input required type="radio" name="qua" id="Others" value="Others" onclick="toggleAct('Others')">
+                                        <label for="Others">Others</label>
+                                    </span>
                                 </span><br>
 
                             <div id="schlDiv">
@@ -262,7 +351,17 @@
                                 <input required type="text" inputmode="numeric" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="Fcntct" name="Ccntct"><br>
                             </div>
 
-                            <input type="submit" value="Submit">
+                            <!-- <div>
+                                radio: <input type="text" id="try1">
+                            </div>
+
+<br>
+
+<div>
+    select: <input type="text" id="try7">
+</div> -->
+<br>
+                             <input class="btn btn-primary" type="submit" value="Submit" style="width: 96%;margin: 0 0 0 0px;">
                             </form>
                         </div>
                 </div>
@@ -271,12 +370,34 @@
     </div>
 
     <script>
-        let degVar = ['B.E','B.Tech','B.Sc'];
+        document.getElementsByName('gen').forEach(itr1 =>
+            itr1.addEventListener('click',radioFnc)
+        )
+
+
+        function radioFnc(){
+            document.getElementsByName('gen').forEach(itr1 => {
+                if(itr1.checked){
+                    document.getElementById('try1').value = itr1.value;
+                } 
+            });
+        }
+
+        document.getElementById('deptID').addEventListener('change',slctFnc);
+        function slctFnc(){
+            try7.value = this.value;
+        }
+
         
-        let deptBE = ['Aeronautical','Automobile','EEE','ECE','Mech'];
-        let deptBTech = ['BioTech','FT','IT'];
-        let deptBSc = ['Physics','Maths','Biology','Chem'];
+
+        let degVar = ['M.E','M.Tech','M.Sc','M.A','M.Com','B.E','B.Tech','B.Sc','B.A','B.Com'];
         
+        let deptEngineering = [' Civil Engineering', 'Aeronautical Engineering', 'Automobile Engineering', 'Bioinformatics', 'Biomedical Engineering', 'Computer Science and Engineering', 'Electrical and Electronics Engineering', 'Electronics and Communication Engineering', 'Mechanical Engineering', 'Mechatronics Engineering']
+        let deptTech = ['Artificial Intelligence and Data Science', 'Biotechnology', 'Chemical Engineering', 'Fashion Technology', 'Information Technology']
+        let deptScience = ['Biochemistry', 'Biology', 'Biotechnology', 'Botony', 'Chemistry', 'Computer Science', 'Data Science', 'Forensic Sciences', 'Information Technology', 'Mathematics', 'Microbiology', 'Physics', 'Statistics', 'Zoology']
+        let deptArts = ['Economics', 'English', 'French', 'German', 'History', 'Philosophy', 'Political Science', 'Psychology']
+        let deptCmrs = ['Accountancy', 'Accounting and Finance', 'Banking and Finance', 'Computer Science', 'Economics', 'Finance', 'Marketing']
+
         let Slct1 = document.getElementById('degID');
         let Slct2 = document.getElementById('deptID');
 
@@ -289,16 +410,24 @@
 
         Slct1.onchange = function(){
             Slct2.innerHTML = '<option></option>';
-            if (this.value == 'B.E'){
-                addToSlct2(deptBE);
+            if (this.value == 'B.E' || this.value == 'M.E'){
+                addToSlct2(deptEngineering);
             }
 
-            if (this.value == 'B.Tech'){
-                addToSlct2(deptBTech);
+            if (this.value == 'B.Tech' || this.value == 'M.Tech'){
+                addToSlct2(deptTech);
             }
 
-            if (this.value == 'B.Sc'){
-                addToSlct2(deptBSc);
+            if (this.value == 'B.Sc' || this.value == 'M.Sc'){
+                addToSlct2(deptScience);
+            }
+
+            if (this.value == 'B.Com' || this.value == 'M.Com'){
+                addToSlct2(deptCmrs);
+            }
+
+            if (this.value == 'B.A' || this.value == 'M.A'){
+                addToSlct2(deptArts);
             }
         }
 
