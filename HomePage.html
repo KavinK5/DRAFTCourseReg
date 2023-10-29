@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSSdir/styles1.css' %}">
+    <style>
+    body
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("{% static 'IMAGESdir/bgImg.jpg' %}");
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="imgHref">
+        <div>
+            <img class="elLogo" src="{% static 'IMAGESdir/Logo.png' %}">
+        </div>
+
+
+        <nav >
+            <div><a href="https://elysiumacademy.org/">About</a></div>
+            <div><a href="https://elysiumacademy.org/it-corporate-training-service-2/">Services</a></div>
+            <div><a href="https://elysiumacademy.org/web-development-course/">Courses</a></div>
+            <div><a href="https://elysiumacademy.org/coimbatore-training-center/">Contact</a></div>
+            <div><a href="{% url 'RegName' %}">Register</a></div>
+        </nav>
+    </div>
+</body>
+</html>

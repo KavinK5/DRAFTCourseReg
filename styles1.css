@@ -1,0 +1,33 @@
+.elLogo
+{
+    height:80px;
+    width:280px;
+    mix-blend-mode:darken;
+}
+
+.imgHref
+{
+    display:flex;
+}
+
+nav
+{
+    display:flex;
+    gap:20px;
+    font-weight:bold;
+    position:absolute;
+    right:15%;
+    top:30px;
+}
+
+nav div a
+{
+    text-decoration:none;
+    color:red;
+    font-size:1.2em;
+}
+
+nav div a:hover
+{
+    color:black;
+}
