@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 90px;
+            width: 250px;
+        }
+
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        picture span{
+            font-size:large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        @media (max-width:800px){
+            #fullstack{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <picture>
+        <img src="./elysium.png"> <br>
+        <!-- <span>C</span><span>o</span><span>u</span><span>r</span><span>s</span><span>e</span><span>s </span>
+
+        <span>O</span><span>f</span><span>f</span><span>e</span><span>r</span><span>e</span><span>d..</span> -->
+
+        <h2>Courses Offered..</h2>
+
+        <div style="display: flex;gap:1em;justify-content: center;margin-top: 30px;" id="fullstack">
+
+        <table border="2px solid black" cellspacing = 0 >
+            <tr style="text-align: center;">
+                <th>
+                    <h3 style="font-size: 1.3em;">FIELDS</h3>
+                </th>
+
+                <th>
+                    <h3 style="font-size: 1.3em;">COURSES</h3>
+                </th>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td rowspan="5" style="padding: 0 15px;font-weight: bold;font-size: 1.2em;">FrontEnd Web Development</td>
+                <td style="padding: 5px 10px;background-color: rgb(255, 200, 20);font-size: 1.15em;">HyperText Markup Language<img src="./html.png" style="height: 30px;width: 30px;"></td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;background-color: rgb(0, 150, 255);font-size: 1.15em;color: whitesmoke;">Cascading Style Sheets<img src="./css.png" style="height: 30px;width: 30px;"></td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;background-color: rgb(255, 225, 120);font-size: 1.15em;">JavaScript <img src="./js.png" style="height: 25px;width: 25px;"></td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;background-color: rgb(225, 215, 255);font-size: 1.15em;color: blue;">React JS<img src="./react.png" style="height: 25px;width: 25px;"></td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;background-color: skyblue;font-size: 1.15em;">ExpressJS<img src="./expressJS.png" style="height: 25px;width: 65px;mix-blend-mode: darken;"></td>
+            </tr>
+        </table>
+
+        <table border="2px solid black" cellspacing = 0 >
+            <tr style="text-align: center;">
+                <th>
+                    <h3 style="font-size: 1.3em;">FIELDS</h3>
+                </th>
+
+                <th>
+                    <h3 style="font-size: 1.3em;">COURSES</h3>
+                </th>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td rowspan="4" style="padding: 0 15px;font-weight: bold;font-size: 1.2em;">Backend Web Development</td>
+                <td style="padding: 5px 10px;background-color: turquoise;font-size: 1.15em;">Python<img src="./python.png" style="height: 30px;width: 30px;">/<br> Java<img src="./java.png" style="height: 30px;width: 30px;"></td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 10px;background-color: rgb(165, 142, 42);font-size: 1.15em;color: white;">Django <img src="./django.png" style="height: 30px;width: 30px;"> / Spring<img src="./spring.png" style="height: 35px;width: 35px;"></td>
+            </tr>
+
+            </table>
+
+    </div>
+
+    <div style="display: flex;justify-content: center;margin-top: 30px;" id="db">
+        <table border="2px solid black" cellspacing = 0>
+            <tr>
+                <th>
+                    <h3 style="font-size: 1.3em;">FIELDS</h3>
+                </th>
+
+                <th>
+                    <h3 style="font-size: 1.3em;">COURSES</h3>
+                </th>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td rowspan="2" style="padding: 0 15px;font-weight: bold;font-size: 1.2em;">Database Management System</td>
+                <td style="padding: 15px 15px;background-color: rosybrown;font-size: 1.15em;">Structured Query Language<img src="./sql-server.png" style="height: 35px;width: 35px;"></td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 15px 15px;background-color: rgb(255, 200, 20);font-size: 1.15em;">MongoDB<img src="./mongoDB.png" style="height: 35px;width: 35px;mix-blend-mode:multiply;"></tr>
+        
+        </table>
+    </div>
+
+    <div style="display: flex;justify-content: center;margin-top: 30px;" >
+        <table border="2px solid black" cellspacing = 0>
+            <tr>
+                <th>
+                    <h3 style="font-size: 1.3em;">FIELDS</h3>
+                </th>
+
+                <th>
+                    <h3 style="font-size: 1.3em;">COURSES</h3>
+                </th>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td rowspan="4" style="padding: 0 65px;font-weight: bold;font-size: 1.2em;">MERN Stack</td>
+                <td style="padding: 15px 15px;background-color: rgb(255, 200, 20);font-size: 1.15em;"><span style="font-weight: bold;">M</span>ongoDB<img src="./mongoDB.png" style="height: 35px;width: 35px;mix-blend-mode:multiply;"></tr>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;background-color: skyblue;font-size: 1.15em;"><span style="font-weight: bold;">E</span>xpressJS<img src="./expressJS.png" style="height: 25px;width: 65px;mix-blend-mode: darken;">
+                </td>
+
+                <tr style="text-align: center;">
+                    <td style="padding: 5px 15px;background-color: rgb(225, 215, 255);font-size: 1.15em;color: blue;"><span style="font-weight: bold;">R</span>eact JS<img src="./react.png" style="height: 25px;width: 25px;"></td>
+                </tr>
+
+                <tr style="text-align: center;">
+                    <td style="padding: 5px 15px;background-color: rgb(225, 215, 255);font-size: 1.15em;color: blue;"><span style="font-weight: bold;">N</span>ode JS<img src="./nodeJS.png" style="height: 25px;width: 25px;"></td>
+                </tr>
+        
+        </table>
+    </div>
+
+    <div id="standalone" style="margin-top: 30px;display: flex;justify-content: center;">
+        <table border="2px solid black" cellspacing = 0>
+            <tr style="text-align: center;">
+                <td rowspan="10" style="font-size: 1.3em;padding:0 65px;"><b>Programming languages</b></td>
+                <td style="padding: 5px 15px;font-size: 1.15em;">C</td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;font-size: 1.15em;">C++</td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;font-size: 1.15em;">C Sharp</td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;font-size: 1.15em;">Python</td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;font-size: 1.15em;">Java</td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;font-size: 1.15em;">HTML, CSS, JavaScript</td>
+            </tr>
+
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;font-size: 1.15em;">TypeScript</td>
+            </tr>
+
+            <tr style="text-align: center;" >
+                <td style="padding: 5px 15px;font-size: 1.15em;">R</td>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td style="padding: 5px 15px;font-size: 1.15em;">php</td>
+            </tr>
+        </table>
+    </div>
+        
+    </picture>
+</body>
+</html>
