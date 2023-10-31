@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CourseRegistration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ForCSS/HomeStyles.css' %}">
+</head>
+<body>
+
+<div>
+        <div class="headR">
+            <img src="{% static 'ForIMAGES/elysium.png' %}">
+            <nav id="headerNav">
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="{% url 'courseTable' %}">Courses</a>
+                <a href="">Contact</a>
+                <!-- <a href="">Logout</a> -->
+            </nav>
+            <!-- <button><ion-icon name="menu"></ion-icon></button> -->
+            <ion-icon name="menu" id="menuIcon"></ion-icon>
+
+        </div>
+        <div id="top">
+            <div class="WholeContent">
+                <div class="content">
+                        <img src="{% static 'ForIMAGES/quotes1.jpg' %}">
+                        <div class="formFor">
+                                    <div id="regText1">
+                                        <span>Registration Form</span>
+                                    </div>
+
+                            <form>
+                                <label for="Fname">Name</label><br>
+                                <input required type="text" id="Fname" name="Cname">
+
+
+                                <label for="Fdadname">Father's Name</label><br>
+                                <input required type="text" id="Fdadname" name="Cdadname">
+
+                                <label>Gender</label><br>
+                                <span id="spanID">
+                                    <span>
+                                        <input required type="radio" name="gen" id="Male" value="Male">
+                                        <label for="Male">Male</label>
+                                    </span>
+                                    <span>
+                                        <input required type="radio" name="gen" id="Female" value="Female">
+                                        <label for="Female">Female</label>
+                                    </span>
+                                    <span>
+                                        <input required type="radio" name="gen" id="others" value="others">
+                                        <label for="others">Others</label> <br>
+                                    </span>
+                                </span>
+
+                                <label>Qualification</label><br>
+                                <span id="spanID1">
+                                    <span>
+                                        <input required type="radio" name="qua" id="SSLC" value="SSLC" onclick="toggleAct('SSLC')">
+                                        <label for="SSLC">SSLC</label>
+                                    </span>
+
+                                    <span>
+                                        <input required type="radio" name="qua" id="HSC" value="HSC" onclick="toggleAct('HSC')">
+                                        <label for="HSC">HSC</label>
+                                    </span>
+
+                                    <span>
+                                        <input required type="radio" name="qua" id="Degree" value="Degree" onclick="toggleAct('Degree')">
+                                        <label for="Degree">Degree</label>
+                                    </span>
+
+                                    <span>
+                                        <input required type="radio" name="qua" id="Others" value="Others" onclick="toggleAct('Others')">
+                                        <label for="Others">Others</label>
+                                    </span>
+                                </span><br>
+
+                            <div id="schlDiv">
+                                <label for="Fschname">School Name</label><br>
+                                <input required type="text" id="Fschname" name="Cschname"><br>
+                            </div>
+
+                            <div id="degDetails">
+                                <div>
+                                    <label for="degID">Degree</label><br>
+                                    <select required id="degID">
+                                        <option value="">Degree?</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="deptID">Department</label><br>
+                                    <select required id="deptID">
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div id="moreclg">
+                                <label for="Fclgname">Institution</label><br>
+                                <input required type="text" id="Fclgname" name="Cclgname"><br>
+                            </div>
+
+                            <div id="dipQualif">
+                                <input required type="text" id="Fdip" name="Cdip" placeholder="Mention the Qualification"><br>
+                            </div>
+
+                            <div id="clgyr">
+                                <label for="Fyr">Year of Passed Out</label><br>
+                                <input required type="text" id="Fyr" name="Cyr" pattern="20[012]{1}[0-9]{1}"><br>
+                            </div>
+
+                            <div id="divEmail">
+                                <label for="Fem">Email Address</label><br>
+                                <input required type="email" id="Fem" name="Cem" placeholder="domain112@-----" pattern="([0-9a-zA-Z\.?]+)@([a-z\.]+)"><br>
+                            </div>
+
+                            <div id="divContact">
+                                <label for="Fcntct">Mobile Number</label><br>
+                                <input required type="text" inputmode="numeric" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="Fcntct" name="Ccntct"><br>
+                            </div>
+
+                            <div class="SrcEnq">
+                                <label>Mode of Class</label><br>
+                                <div class="modeOFF">
+                                    <div>
+                                        <input required type="radio" name="q21" id="Online">
+                                        <label for="Online">Online</label>
+                                    </div>
+
+                                    <div>
+                                        <input required type="radio" name="q21" id="Offline">
+                                        <label for="Offline">Offline</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div>
+                                radio: <input type="text" id="try1">
+                            </div>
+
+<br>
+
+<div>
+    select: <input type="text" id="try7">
+</div> -->
+<br>
+                             <input class="btn1" type="submit" value="Submit">
+                            </form>
+                        </div>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <script>
+        document.getElementsByName('gen').forEach(itr1 =>
+            itr1.addEventListener('click',radioFnc)
+        )
+
+
+        function radioFnc(){
+            document.getElementsByName('gen').forEach(itr1 => {
+                if(itr1.checked){
+                    document.getElementById('try1').value = itr1.value;
+                }
+            });
+        }
+
+        document.getElementById('deptID').addEventListener('change',slctFnc);
+        function slctFnc(){
+            try7.value = this.value;
+        }
+
+
+
+        let degVar = ['M.E','M.Tech','M.Sc','M.A','M.Com','B.E','B.Tech','B.Sc','B.A','B.Com'];
+
+        let deptEngineering = [' Civil Engineering', 'Aeronautical Engineering', 'Automobile Engineering', 'Bioinformatics', 'Biomedical Engineering', 'Computer Science and Engineering', 'Electrical and Electronics Engineering', 'Electronics and Communication Engineering', 'Mechanical Engineering', 'Mechatronics Engineering']
+        let deptTech = ['Artificial Intelligence and Data Science', 'Biotechnology', 'Chemical Engineering', 'Fashion Technology', 'Information Technology']
+        let deptScience = ['Biochemistry', 'Biology', 'Biotechnology', 'Botony', 'Chemistry', 'Computer Science', 'Data Science', 'Forensic Sciences', 'Information Technology', 'Mathematics', 'Microbiology', 'Physics', 'Statistics', 'Zoology']
+        let deptArts = ['Economics', 'English', 'French', 'German', 'History', 'Philosophy', 'Political Science', 'Psychology']
+        let deptCmrs = ['Accountancy', 'Accounting and Finance', 'Banking and Finance', 'Computer Science', 'Economics', 'Finance', 'Marketing']
+
+        let Slct1 = document.getElementById('degID');
+        let Slct2 = document.getElementById('deptID');
+
+        degVar.forEach(function addDegree(item){
+            let option = document.createElement('option');
+            option.text = item;
+            option.value = item;
+            Slct1.appendChild(option);
+        });
+
+        Slct1.onchange = function(){
+            Slct2.innerHTML = '<option></option>';
+            if (this.value == 'B.E' || this.value == 'M.E'){
+                addToSlct2(deptEngineering);
+            }
+
+            if (this.value == 'B.Tech' || this.value == 'M.Tech'){
+                addToSlct2(deptTech);
+            }
+
+            if (this.value == 'B.Sc' || this.value == 'M.Sc'){
+                addToSlct2(deptScience);
+            }
+
+            if (this.value == 'B.Com' || this.value == 'M.Com'){
+                addToSlct2(deptCmrs);
+            }
+
+            if (this.value == 'B.A' || this.value == 'M.A'){
+                addToSlct2(deptArts);
+            }
+        }
+
+        function addToSlct2(arr){
+            arr.forEach(function (item){
+                let option = document.createElement('option');
+                option.text = item;
+                option.value = item;
+                Slct2.appendChild(option);
+            })
+        }
+
+
+        function toggleAct(parameter1){
+            document.getElementById('schlDiv').style.display = 'none';
+            document.getElementById('degDetails').style.display = 'none';
+            document.getElementById('moreclg').style.display = 'none';
+            document.getElementById('dipQualif').style.display = 'none';
+            document.getElementById('clgyr').style.display = 'none';
+            if (parameter1 == 'SSLC' || parameter1 == 'HSC'){
+                document.getElementById('schlDiv').style.display = 'block';
+            }
+
+            if (parameter1 == 'Degree'){
+                document.getElementById('degDetails').style.display = 'flex';
+                document.getElementById('moreclg').style.display = 'block';
+                document.getElementById('clgyr').style.display = 'block';
+            }
+
+            if (parameter1 == 'Others'){
+                document.getElementById('dipQualif').style.display = 'block';
+                document.getElementById('clgyr').style.display = 'block';
+            }
+        }
+
+
+        var ic1  = document.getElementById('menuIcon')
+        var nav1 = document.getElementById('headerNav')
+        var dter = 0;
+
+        ic1.addEventListener('click', function(){
+            if (dter == 0){
+                nav1.style.display = 'flex';
+                dter = 1;
+            }
+
+            else{
+                nav1.style.display = 'none';
+                dter = 0;
+            }
+        })
+    </script>
+
+</body>
+</html>
