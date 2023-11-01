@@ -122,16 +122,30 @@
                                 <input required type="text" inputmode="numeric" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="Fcntct" name="Ccntct"><br>
                             </div>
 
+                                <div id="courseDetails">
+                                <div>
+                                    <label for="fieldID">Field</label><br>
+                                    <select id="fieldID" style="padding:5px 10px 5px 5px;width:215px;cursor:pointer;border:2px solid black;border-radius:5px;margin-bottom:10px;text-align:center;" required>
+                                        <option>Choose the Field</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="courseID">Courses</label><br>
+                                    <select id="courseID" style="padding:5px 10px 5px 5px;width:285px;cursor:pointer;border:2px solid black;border-radius:5px;margin-bottom:10px;font-weight:bold;text-align:center;" required></select>
+                                </div>
+                            </div>
+                                <p style="margin-top:-10px;margin-bottom:10px;">Click Courses NAV to get detailed decription</p>
+
                             <div class="SrcEnq">
-                                <label>Mode of Class</label><br>
+                                <label>Preferred Mode of Class</label><br>
                                 <div class="modeOFF">
                                     <div>
-                                        <input required type="radio" name="q21" id="Online">
+                                        <input required type="radio" value="Online" name="q21" id="Online">
                                         <label for="Online">Online</label>
                                     </div>
 
                                     <div>
-                                        <input required type="radio" name="q21" id="Offline">
+                                        <input required type="radio" value="Offline" name="q21" id="Offline">
                                         <label for="Offline">Offline</label>
                                     </div>
                                 </div>
@@ -147,6 +161,15 @@
     select: <input type="text" id="try7">
 </div> -->
 <br>
+                                <input type="text" id='radValGENDER' name="FetchGender">
+                                <input type="text" id='radValQUALIFICATION' name="FetchQualification">
+                                <input type="text" id='radValMODE' name="FetchMode">
+                                <input type="text" id='radValDEG' name="FetchDegree">
+                                <input type="text" id='radValDEPT' name="FetchDept">
+                                <input type="text" id='radValFIELD' name="FetchField">
+                                <input type="text" id='radValCOURSE' name="FetchCourse">
+
+<br><br>
                              <input class="btn1" type="submit" value="Submit">
                             </form>
                         </div>
@@ -226,6 +249,75 @@
             })
         }
 
+let fieldVar = [
+        'Programming Languages',
+        'Web Development',
+        'Data Science',
+        'Cloud Computing'
+      ];
+
+      let coursePL = [
+        'C',
+        'C++',
+        'C#',
+        'Python',
+        'Java',
+        'HTML,CSS,JS',
+        'TypeScript',
+        'R',
+        'php',
+        'Ruby',
+        'Kotlin'
+      ];
+
+      let courseWD = [
+        'Frontend Web Development',
+        'MERN Stack',
+        'Python Full Stack Web Development',
+        'Java Full Stack Web Development'
+      ];
+
+      let courseDS = ['Python Data Science'];
+
+      let courseCC = ['Microsoft Azure', 'AWS'];
+
+      let slTag1 = document.getElementById('fieldID');
+      let slTag2 = document.getElementById('courseID');
+
+      fieldVar.forEach(function addFields(item) {
+        let option = document.createElement('option');
+        option.text = item;
+        option.value = item;
+        slTag1.appendChild(option);
+      });
+
+      slTag1.onchange = function () {
+        slTag2.innerHTML = '<option></option>';
+        if (this.value == 'Programming Languages') {
+          addToSlTag2FC(coursePL);
+        }
+
+        if (this.value == 'Web Development') {
+          addToSlTag2FC(courseWD);
+        }
+
+        if (this.value == 'Data Science') {
+          addToSlTag2FC(courseDS);
+        }
+
+        if (this.value == 'Cloud Computing') {
+          addToSlTag2FC(courseCC);
+        }
+      };
+
+      function addToSlTag2FC(arr) {
+        arr.forEach(function (item) {
+          let option = document.createElement('option');
+          option.text = item;
+          option.value = item;
+          slTag2.appendChild(option);
+        });
+      }
 
         function toggleAct(parameter1){
             document.getElementById('schlDiv').style.display = 'none';
@@ -265,6 +357,72 @@
                 dter = 0;
             }
         })
+
+
+          var rd1 = document.querySelectorAll("input[name = 'gen']");
+          var txt1 = document.getElementById('radValGENDER');
+
+          let func1 = () => {
+            varStore = document.querySelector("input[name = 'gen']:checked").value;
+            txt1.value = varStore;
+          }
+
+          rd1.forEach(itr => {
+            itr.addEventListener('change',func1)
+          })
+
+
+          var rd2 = document.querySelectorAll("input[name = 'qua']");
+          var txt2 = document.getElementById('radValQUALIFICATION');
+
+          let func2 = () => {
+            varStore2 = document.querySelector("input[name = 'qua']:checked").value;
+            txt2.value = varStore2;
+          }
+
+          rd2.forEach(itr => {
+            itr.addEventListener('change',func2)
+          })
+
+
+          var rd3 = document.querySelectorAll("input[name = 'q21']");
+          var txt3 = document.getElementById('radValMODE');
+
+          let func3 = () => {
+            varStore3 = document.querySelector("input[name = 'q21']:checked").value;
+            txt3.value = varStore3;
+          }
+
+          rd3.forEach(itr => {
+            itr.addEventListener('change',func3)
+          })
+
+
+
+          document.getElementById('degID').addEventListener('change',fnc11)
+
+        function fnc11(){
+          document.getElementById('radValDEG').value = this.value;
+        }
+
+
+        document.getElementById('deptID').addEventListener('change',fnc22)
+
+        function fnc22(){
+          document.getElementById('radValDEPT').value = this.value;
+        }
+
+        document.getElementById('fieldID').addEventListener('change',fnc33)
+
+        function fnc33(){
+          document.getElementById('radValFIELD').value = this.value;
+        }
+
+        document.getElementById('courseID').addEventListener('change',fnc44)
+
+        function fnc44(){
+          document.getElementById('radValCOURSE').value = this.value;
+        }
     </script>
 
 </body>
