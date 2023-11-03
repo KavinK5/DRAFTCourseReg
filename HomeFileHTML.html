@@ -31,26 +31,27 @@
                                         <span>Registration Form</span>
                                     </div>
 
-                            <form>
+                            <form method="POST">
+                                {% csrf_token %}
                                 <label for="Fname">Name</label><br>
-                                <input required type="text" id="Fname" name="Cname">
+                                <input  required   type="text" id="Fname" name="Cname">
 
 
                                 <label for="Fdadname">Father's Name</label><br>
-                                <input required type="text" id="Fdadname" name="Cdadname">
+                                <input required    type="text" id="Fdadname" name="Cdadname">
 
                                 <label>Gender</label><br>
                                 <span id="spanID">
                                     <span>
-                                        <input required type="radio" name="gen" id="Male" value="Male">
+                                        <input required    type="radio" name="gen" id="Male" value="Male">
                                         <label for="Male">Male</label>
                                     </span>
                                     <span>
-                                        <input required type="radio" name="gen" id="Female" value="Female">
+                                        <input required    type="radio" name="gen" id="Female" value="Female">
                                         <label for="Female">Female</label>
                                     </span>
                                     <span>
-                                        <input required type="radio" name="gen" id="others" value="others">
+                                        <input  required   type="radio" name="gen" id="others" value="others">
                                         <label for="others">Others</label> <br>
                                     </span>
                                 </span>
@@ -58,80 +59,81 @@
                                 <label>Qualification</label><br>
                                 <span id="spanID1">
                                     <span>
-                                        <input required type="radio" name="qua" id="SSLC" value="SSLC" onclick="toggleAct('SSLC')">
+                                        <input  required   type="radio" name="qua" id="SSLC" value="SSLC" onclick="toggleAct('SSLC')">
                                         <label for="SSLC">SSLC</label>
                                     </span>
 
                                     <span>
-                                        <input required type="radio" name="qua" id="HSC" value="HSC" onclick="toggleAct('HSC')">
+                                        <input  required   type="radio" name="qua" id="HSC" value="HSC" onclick="toggleAct('HSC')">
                                         <label for="HSC">HSC</label>
                                     </span>
 
                                     <span>
-                                        <input required type="radio" name="qua" id="Degree" value="Degree" onclick="toggleAct('Degree')">
+                                        <input required    type="radio" name="qua" id="Degree" value="Degree" onclick="toggleAct('Degree')">
                                         <label for="Degree">Degree</label>
                                     </span>
 
                                     <span>
-                                        <input required type="radio" name="qua" id="Others" value="Others" onclick="toggleAct('Others')">
+                                        <input required    type="radio" name="qua" id="Others" value="Others" onclick="toggleAct('Others')">
                                         <label for="Others">Others</label>
                                     </span>
                                 </span><br>
 
                             <div id="schlDiv">
                                 <label for="Fschname">School Name</label><br>
-                                <input required type="text" id="Fschname" name="Cschname"><br>
+                                <input   type="text" id="Fschname" name="Cschname"><br>
                             </div>
 
                             <div id="degDetails">
                                 <div>
                                     <label for="degID">Degree</label><br>
-                                    <select required id="degID">
+                                    <select   id="degID">
                                         <option value="">Degree?</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label for="deptID">Department</label><br>
-                                    <select required id="deptID">
+                                    <select   id="deptID">
 
                                     </select>
                                 </div>
                             </div>
 
-                            <div id="moreclg">
-                                <label for="Fclgname">Institution</label><br>
-                                <input required type="text" id="Fclgname" name="Cclgname"><br>
-                            </div>
 
                             <div id="dipQualif">
-                                <input required type="text" id="Fdip" name="Cdip" placeholder="Mention the Qualification"><br>
+                                <input   type="text" id="Fdip" name="Cdip" placeholder="Mention the Qualification"><br>
+                            </div>
+
+                                <div id="moreclg">
+                                <label for="Fclgname">Institution</label><br>
+                                <input   type="text" id="Fclgname" name="Cclgname"><br>
                             </div>
 
                             <div id="clgyr">
                                 <label for="Fyr">Year of Passed Out</label><br>
-                                <input required type="text" id="Fyr" name="Cyr" pattern="20[012]{1}[0-9]{1}"><br>
+                                <input required    type="text" id="Fyr" name="Cyr" pattern="20[012]{1}[0-9]{1}"><br>
                             </div>
 
                             <div id="divEmail">
                                 <label for="Fem">Email Address</label><br>
-                                <input required type="email" id="Fem" name="Cem" placeholder="domain112@-----" pattern="([0-9a-zA-Z\.?]+)@([a-z\.]+)"><br>
+                                <input  required   type="email" id="Fem" name="Cem" placeholder="domain112@-----" pattern="([0-9a-zA-Z\.?]+)@([a-z\.]+)"><br>
                             </div>
 
                             <div id="divContact">
                                 <label for="Fcntct">Mobile Number</label><br>
-                                <input required type="text" inputmode="numeric" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="Fcntct" name="Ccntct"><br>
+                                <input  required   type="text" inputmode="numeric" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="Fcntct" name="Ccntct"><br>
                             </div>
 
                                 <div id="courseDetails">
                                 <div>
                                     <label for="fieldID">Field</label><br>
-                                    <select id="fieldID" style="padding:5px 10px 5px 5px;width:215px;cursor:pointer;border:2px solid black;border-radius:5px;margin-bottom:10px;text-align:center;" required>
+                                    <select required  id="fieldID" style="padding:5px 10px 5px 5px;width:215px;cursor:pointer;border:2px solid black;border-radius:5px;margin-bottom:10px;text-align:center;"  >
                                         <option>Choose the Field</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label for="courseID">Courses</label><br>
-                                    <select id="courseID" style="padding:5px 10px 5px 5px;width:285px;cursor:pointer;border:2px solid black;border-radius:5px;margin-bottom:10px;font-weight:bold;text-align:center;" required></select>
+                                    <select required id="courseID" style="padding:5px 10px 5px 5px;width:285px;cursor:pointer;border:2px solid black;border-radius:5px;margin-bottom:10px;font-weight:bold;text-align:center;"  ></select>
                                 </div>
                             </div>
                                 <p style="margin-top:-10px;margin-bottom:10px;">Click Courses NAV to get detailed decription</p>
@@ -140,12 +142,12 @@
                                 <label>Preferred Mode of Class</label><br>
                                 <div class="modeOFF">
                                     <div>
-                                        <input required type="radio" value="Online" name="q21" id="Online">
+                                        <input required  type="radio" value="Online" name="q21" id="Online">
                                         <label for="Online">Online</label>
                                     </div>
 
                                     <div>
-                                        <input required type="radio" value="Offline" name="q21" id="Offline">
+                                        <input required  type="radio" value="Offline" name="q21" id="Offline">
                                         <label for="Offline">Offline</label>
                                     </div>
                                 </div>
@@ -327,6 +329,7 @@ let fieldVar = [
             document.getElementById('clgyr').style.display = 'none';
             if (parameter1 == 'SSLC' || parameter1 == 'HSC'){
                 document.getElementById('schlDiv').style.display = 'block';
+                document.getElementById('clgyr').style.display = 'block';
             }
 
             if (parameter1 == 'Degree'){
@@ -338,6 +341,7 @@ let fieldVar = [
             if (parameter1 == 'Others'){
                 document.getElementById('dipQualif').style.display = 'block';
                 document.getElementById('clgyr').style.display = 'block';
+                document.getElementById('moreclg').style.display = 'block';
             }
         }
 
@@ -427,3 +431,4 @@ let fieldVar = [
 
 </body>
 </html>
+
